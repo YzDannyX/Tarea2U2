@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Formulario Estudiante</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background:#f0f2f6; padding:2rem; }
+    .card { max-width:560px; margin:0 auto; background:#fff; border-radius:14px; padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+    h1 { margin:0 0 1rem; }
+    .field { margin-bottom:12px; }
+    input { width:100%; padding:10px; border-radius:8px; border:1px solid #ddd; }
+    button { padding:10px 14px; border-radius:8px; border:0; cursor:pointer; background:#2563eb; color:#fff;}
+    .note { font-size:.9rem; color:#555; margin-top:8px;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Formulario de Estudiante (vista de prueba)</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Enviar (no guarda aún)</button>
+    </form>
+    <p class="note">Nota: Este formulario por ahora no guarda los datos en la base de datos.</p>
+  </div>
+</body>
+</html>
